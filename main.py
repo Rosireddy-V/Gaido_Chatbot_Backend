@@ -28,6 +28,8 @@ app.add_middleware(
 )
 
 # Load API keys securely (set these as environment variables)
+os.environ["LANGSMITH_TRACING"] = 'true'
+langsmith_api_key = os.environ.get("LANGSMITH_API_KEY")
 groq_api_key = os.environ.get("GROQ_API_KEY")
 mistralai_api_key = os.environ.get("MISTRALAI_API_KEY")
 # Load LLM & Embeddings
